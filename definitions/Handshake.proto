@@ -2,15 +2,12 @@ syntax = "proto3";
 	
 package pModel;
 
-import "nanopb.proto";
-
 option java_package = "com.force.confb.pmodel";
 option java_multiple_files = true;
+//string text = 1 [(nanopb).max_size = 64]; шаблон
 
-message HandshakeRequest {
-  string text = 1 [(nanopb).max_size = 64];
-}
+message HandshakeRequest {}
 
-message HandshakeResponse {
-  string text = 1 [(nanopb).max_size = 64];
-}
+message HandshakeResponse {}
+
+message Disconnect{}

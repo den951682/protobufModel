@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package pModel;
+
+import "nanopb.proto";
+
+option java_package = "com.force.confb.pmodel";
+option java_multiple_files = true;
+
+message GetAllParameters {}
+
+message GetParameter {
+  uint32 id = 1;
+}
+
+message IntParameter {
+  uint32 id = 1;
+  int32 value = 2;
+}
+
+message SetIntParameter {
+  uint32 id = 1;
+  int32 value = 2;
+}
+
+message FloatParameter {
+  uint32 id = 1;
+  float value = 2;
+}
+
+message SetFloatParameter {
+  uint32 id = 1;
+  float value = 2;
+}
+
+message StringParameter {
+  uint32 id = 1;
+  string value = 2[(nanopb).max_size = 32];
+}
+
+message SetStringParameter {
+  uint32 id = 1;
+  string value = 2[(nanopb).max_size = 32];
+}
+
+message BooleanParameter {
+  uint32 id = 1;
+  bool value = 2;
+}
+
+message SetBooleanParameter {
+  uint32 id = 1;
+  bool value = 2;
+}
+
+message ParameterInfo {
+  uint32 id = 1;
+  string name = 2[(nanopb).max_size = 32];
+  string description = 3[(nanopb).max_size = 64];
+  bool editable = 4;
+  float min_value = 5;
+  float max_value = 6;
+  uint32 type = 7; // 0 - int, 1 - float, 2 - string, 3 - boolean
+}
