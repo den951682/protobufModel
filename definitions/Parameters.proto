@@ -35,12 +35,12 @@ message SetFloatParameter {
 
 message StringParameter {
   uint32 id = 1;
-  string value = 2[(nanopb).max_size = 32];
+  bytes value = 2[(nanopb).max_size = 64];
 }
 
 message SetStringParameter {
   uint32 id = 1;
-  string value = 2[(nanopb).max_size = 32];
+  bytes value = 2[(nanopb).max_size = 64];
 }
 
 message BooleanParameter {
@@ -55,8 +55,8 @@ message SetBooleanParameter {
 
 message ParameterInfo {
   uint32 id = 1;
-  string name = 2[(nanopb).max_size = 32];
-  string description = 3[(nanopb).max_size = 64];
+  bytes name = 2[(nanopb).max_size = 64];
+  bytes description = 3[(nanopb).max_size = 128];
   bool editable = 4;
   float min_value = 5;
   float max_value = 6;
