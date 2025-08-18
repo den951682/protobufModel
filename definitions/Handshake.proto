@@ -8,11 +8,11 @@ option java_package = "com.force.confb.pmodel";
 option java_multiple_files = true;
 
 message HandshakeRequest {
-  string text = 1 [(nanopb).max_size = 32];
+  string text = 1 [(nanopb).max_size = 512];
 }
 
 message HandshakeResponse {
-  string text = 1 [(nanopb).max_size = 32];
+  string text = 1 [(nanopb).max_size = 512];
 }
 
 message Disconnect{}
