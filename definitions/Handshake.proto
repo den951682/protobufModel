@@ -9,6 +9,8 @@ option java_multiple_files = true;
 
 message HandshakeRequest {
   string text = 1 [(nanopb).max_size = 512];
+  string text2 = 2 [(nanopb).max_size = 512];
+  string text3 = 3 [(nanopb).max_size = 512];
 }
 
 message HandshakeResponse {
